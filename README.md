@@ -2,7 +2,7 @@
 
 <div align="center">
 <img src="https://img.shields.io/badge/Version-1.0.0-blue.svg" alt="Version"> 
-<img src="https://img.shields.io/badge/License-LJX%20BY%204.0-green.svg" alt="License">
+<img src="https://img.shields.io/badge/License MIT License-green.svg" alt="License">
 <img src="https://img.shields.io/github/stars/LiuJiaxin-1/HitchLearning?style=social" alt="Stars">
 <img src="https://img.shields.io/github/issues/LiuJiaxin-1/HitchLearning?color=red" alt="Issues">
 <img src="https://img.shields.io/badge/python-3.8-purple.svg" alt="Python">
