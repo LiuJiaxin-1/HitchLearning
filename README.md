@@ -33,9 +33,11 @@ Welcome to the official GitHub repository of **HitchLearning**, an innovative De
 - [Future Work and Contributions](#future-work-and-contributions)
 
 ## Introduction 
+<!-- 
 <div align="center">
   <img src="./img/Fig.1.png" alt="Figure2" width="80%">
 </div>
+-->
 HitchLearning is not just another DL methodology. It's a groundbreaking approach that challenges the conventional separation of training and inference found in traditional DL paradigms. The core innovation of HitchLearning lies in its rejection of the assumption that training and inference data are independently and identically distributed (i.i.d.).
 
 ## Key Features
@@ -46,9 +48,11 @@ HitchLearning is not just another DL methodology. It's a groundbreaking approach
 - **Extensive Evaluation:** HitchLearning has been rigorously tested across three different tasks - denoising, deblurring, and super-resolution. It has shown remarkable results in both supervised and unsupervised models across four diverse datasets.
 
 ## Architecture
+<!-- 
 <div align="center">
   <img src="./img/Fig.2.png" alt="Figure Description or Alt Text" width="80%">
 </div>
+-->
 
 ## Installation
 
@@ -73,4 +77,5 @@ Stay tuned for updates, and happy coding!
 
 ---
 
-For more information, please refer to our [Documentation](#documentation) or contact us directly.-->
+For more information, please refer to our [Documentation](#documentation) or contact us directly.
+-->
