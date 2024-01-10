@@ -1,0 +1,39 @@
+###############
+## 
+####
+
+GPU: [4]
+
+VERBOSE: True
+
+MODEL:
+  MODE: 'Trg'
+  SESSION: 'Neighbor2Neighbor'
+  IN_CHAN: 1
+  N_FEAT: 48
+  BLINDSPOT: False
+  ZERO_LAST: False
+
+# Optimization arguments.
+OPTIM:
+  LR: 2e-4
+  NUM_EPOCHS: 50
+  BATCH_SIZE: 1
+  NUM_WORKERS: 1  
+  GAMMA: 0.5
+  LAMBDA1: 1.0
+  LAMBDA2: 1.0
+  INCREASE_RATIO: 2.0
+
+TRAINING:
+  VAL_AFTER_EVERY: 1
+  RESUME: False
+  TRAIN_PS: 256
+  TRAIN_RAW_NAME: 'Raw'
+  TRAIN_GT_NAME: 'GT'
+  VAL_RAW_NAME: 'Raw'
+  VAL_GT_NAME: 'GT'
+  SRC_DIR: '/data/liujiaxin/data/SUFDD/F_actin/9/Train/Raw' # path to training data
+  VAL_DIR: '/data/liujiaxin/data/SUFDD/F_actin/9/Val/Raw'    # path to validation data
+  SAVE_DIR: '/data/liujiaxin/Results/DN/F_actin/03'     # path to save models and images
+  # SAVE_IMAGES: False

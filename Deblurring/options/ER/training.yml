@@ -1,0 +1,29 @@
+###############
+## 
+####
+
+GPU: [1,2,3,4,5,6,7]
+
+VERBOSE: True
+
+MODEL:
+  MODE: 'Deblurring'
+  SESSION: 'MPRNet'
+
+# Optimization arguments.
+OPTIM:
+  BATCH_SIZE: 21
+  NUM_EPOCHS: 3000
+  # NEPOCH_DECAY: [10]
+  LR_INITIAL: 2e-4
+  LR_MIN: 1e-6
+  # BETA1: 0.9
+
+TRAINING:
+  VAL_AFTER_EVERY: 10
+  RESUME: False
+  TRAIN_PS: 256
+  TRAIN_DIR: '/data/liujiaxin/data/SUFDD/F_actin/9/Train' # path to training data
+  VAL_DIR: '/data/liujiaxin/data/SUFDD/F_actin/9/Val'    # path to validation data
+  SAVE_DIR: '/data/liujiaxin/DB_MPRNet'     # path to save models and images
+  # SAVE_IMAGES: False

@@ -1,0 +1,43 @@
+###############
+## 
+####
+
+GPU: [2,3]
+
+VERBOSE: True
+
+MODEL:
+  MODE: 'AllTrg'
+  SESSION: 'MPRNet'
+  IN_CHAN: 1
+  N_FEAT: 96
+  SCALE_UNETFEATS: 48
+  SCALE_ORSNETFEATS: 32
+  NUM_CAB: 8
+  KERNEL_SIZE: 3
+  REDUCTION: 4
+  BIAS: False
+
+# Optimization arguments.
+OPTIM:
+  BATCH_SIZE: 6
+  NUM_WORKERS: 24
+  NUM_EPOCHS: 100
+  WARM_EPOCH: 3
+  # NEPOCH_DECAY: [10]
+  LR_INITIAL: 2e-4
+  LR_MIN: 1e-6
+  # BETA1: 0.9
+
+TRAINING:
+  VAL_AFTER_EVERY: 10
+  RESUME: False
+  TRAIN_PS: 256
+  TRAIN_RAW_NAME: 'MBD5A90'
+  TRAIN_GT_NAME: 'SudoMDB'
+  VAL_RAW_NAME: 'MBD5A90'
+  VAL_GT_NAME: 'GT'
+  SRC_DIR: '/data/liujiaxin/data/SUFDD/ER/9/Train/MBD5A90' # path to training data
+  VAL_DIR: '/data/liujiaxin/data/SUFDD/ER/9/Val/MBD5A90'    # path to validation data
+  SAVE_DIR: '/data/liujiaxin/Results/DB/'     # path to save models and images
+  # SAVE_IMAGES: False

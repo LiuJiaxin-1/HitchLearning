@@ -1,0 +1,29 @@
+###############
+## 
+####
+
+GPU: [2,3,4]
+
+VERBOSE: True
+
+MODEL:
+  MODE: 'Src'
+  SESSION: 'MPRNet'
+
+# Optimization arguments.
+OPTIM:
+  BATCH_SIZE: 24
+  NUM_EPOCHS: 3000
+  # NEPOCH_DECAY: [10]
+  LR_INITIAL: 2e-4
+  LR_MIN: 1e-6
+  # BETA1: 0.9
+
+TRAINING:
+  VAL_AFTER_EVERY: 10
+  RESUME: False
+  TRAIN_PS: 256
+  SRC_DIR: '/data/liujiaxin/data/SUFDD/ER/9/Train/MBD5A90' # path to training data
+  VAL_DIR: '/data/liujiaxin/data/SUFDD/ER/9/Val/MBD5A90'    # path to validation data
+  SAVE_DIR: '/data/liujiaxin/Results/DB/ER_Golji/00/'     # path to save models and images
+  # SAVE_IMAGES: False

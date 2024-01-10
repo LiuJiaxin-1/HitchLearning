@@ -1,0 +1,95 @@
+{
+  "task": "F-actin_x2_psnr"     // real-world image sr. root/task/images-models-options
+  , "model": "SwinIR" // "plain" | "plain2" if two inputs
+  , "gpu_ids": [0,1]
+  , "dist": true
+
+  , "scale": 2       // broadcast to "datasets"
+  , "n_channels": 1  // broadcast to "datasets", 1 for grayscale, 3 for color
+
+  , "path": {
+    "root": "/data/liujiaxin/ResPartTrg"            // "denoising" | "superresolution" | "beblur"
+    , "pretrained_netG": null      // path of pretrained model
+    , "pretrained_netE": null      // path of pretrained model
+  }
+
+  , "datasets": {
+    "train": {
+      "name": "train_dataset"           // just name
+      , "dataset_type": "sr"         // "sr" | "denoising" | "deblur"
+      , "dataroot_H": "/data/liujiaxin/data/SUFDD/F_actin/9/Train/SudoSrcSR"// path of H training dataset. DIV2K (800 training images) + Flickr2K (2650 images) + + OST (10324 images)
+      , "dataroot_L": "/data/liujiaxin/data/SUFDD/F_actin/9/Train/Noise"            // path of L training dataset
+      , "prctile": true
+      , "eliback": true
+      , "patch_size": 256                   // patch_size 256 | 288 | 320
+      , "dataloader_shuffle": true
+      , "dataloader_num_workers": 10
+      , "dataloader_batch_size": 4      // batch size 1 | 16 | 32 | 48 | 64 | 128. Total batch size =4x8=32 in SwinIR
+    }
+    ,"update": {
+      "name": "update_dataset"           // just name
+      , "dataset_type": "sr"         // "sr" | "denoising" | "deblur"
+      , "prctile": true
+      , "eliback": true
+      , "dataloader_shuffle": true
+      , "dataloader_num_workers": 10
+      , "dataloader_batch_size": 4     // batch size 1 | 16 | 32 | 48 | 64 | 128. Total batch size =4x8=32 in SwinIR
+    }
+    , "test": {
+      "name": "test_dataset"            // just name
+      , "dataset_type": "sr"         // "sr" | "denoising" | "deblur"
+      , "dataroot_H": "/data/liujiaxin/data/SUFDD/F_actin/9/Val/SR/"  // path of H testing dataset
+      , "dataroot_L": "/data/liujiaxin/data/SUFDD/F_actin/9/Val/Noise"              // path of L testing dataset
+      , "prctile": true
+      , "eliback": true
+
+    }
+  }
+
+  , "netG": {
+    "net_type": "swinir"
+    , "upscale": 2
+    , "in_chans": 1
+    , "img_size": 128
+    , "window_size": 8
+    , "img_range": 1.0
+    , "depths": [6, 6, 6, 6, 6]
+    , "embed_dim": 90
+    , "num_heads": [6, 6, 6, 6, 6]
+    , "mlp_ratio": 2
+    , "upsampler": "nearest+conv"        // "pixelshuffle" | "pixelshuffledirect" | "nearest+conv" | null
+    , "resi_connection": "3conv"        // "1conv" | "3conv"
+
+    , "init_type": "default"
+  }
+
+  , "train": {
+    "epoch": 30
+    ,"G_lossfn_type": "l1"               // "l1" preferred | "l2sum" | "l2" | "ssim" | "charbonnier"
+    , "G_lossfn_weight": 1.0            // default
+
+    , "E_decay": 0                 // Exponential Moving Average for netG: set 0 to disable; default setting 0.999
+
+    , "G_optimizer_type": "adam"        // fixed, adam is enough
+    , "G_optimizer_lr": 2e-4            // learning rate
+    , "G_optimizer_wd": 0               // weight decay, default 0
+    , "G_optimizer_clipgrad": null      // unused
+    , "G_optimizer_reuse": true         //
+
+    , "G_scheduler_type": "MultiStepLR" // "MultiStepLR" is enough
+    , "G_scheduler_milestones": [50, 100, 150, 200, 250]
+    , "G_scheduler_gamma": 0.5
+
+    , "G_regularizer_orthstep": null    // unused
+    , "G_regularizer_clipstep": null    // unused
+
+    , "G_param_strict": true
+    , "E_param_strict": true
+    , "LB": 0.1
+
+    , "checkpoint_test": 1           // for testing
+    , "checkpoint_save": 1           // for saving model
+    , "checkpoint_print": 20           // for print
+  }
+}
+
