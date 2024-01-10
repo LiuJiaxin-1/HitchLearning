@@ -38,7 +38,7 @@ Welcome to the official GitHub repository of **HitchLearning**, an innovative De
 </div>
 HitchLearning is not just another DL methodology. It's a groundbreaking approach that challenges the conventional separation of training and inference found in traditional DL paradigms. The core innovation of HitchLearning lies in its rejection of the assumption that training and inference data are independently and identically distributed (i.i.d.).
 
-## Key Features 🔑
+## Key Features
 
 - **Unified Training and Inference:** HitchLearning uniquely optimizes the model using a single inference image, thereby unifying the process of training and inference. This method addresses the non-i.i.d problem inherent in many DL applications.
 - **Real-Time Adaptation:** By focusing on each specific inference image, HitchLearning adapts in real-time to its unique characteristics, offering a significant improvement in model performance.
@@ -53,7 +53,7 @@ HitchLearning will become the third eye of researchers, helping to observe objec
 
 ## Installation
 
-## Usage 🚀
+## Usage
 ### More details are coming soon!
 
 <!-- ## Why HitchLearning?
