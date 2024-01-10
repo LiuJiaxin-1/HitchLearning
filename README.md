@@ -15,7 +15,7 @@
 
 </div>
 
-# 
+</br>
 
 Welcome to the official GitHub repository of **HitchLearning**, an innovative Deep Learning (DL) paradigm that revolutionizes the traditional approach by merging training and inference into a cohesive process.
 
