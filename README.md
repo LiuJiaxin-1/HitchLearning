@@ -44,7 +44,6 @@ HitchLearning is not just another DL methodology. It's a groundbreaking approach
 - **Real-Time Adaptation:** By focusing on each specific inference image, HitchLearning adapts in real-time to its unique characteristics, offering a significant improvement in model performance.
 - **Efficient and Effective:** This paradigm improves model performance in a 'free-lunch' manner, as it requires no additional data other than the single inference image for optimization.
 - **Extensive Evaluation:** HitchLearning has been rigorously tested across three different tasks - denoising, deblurring, and super-resolution. It has shown remarkable results in both supervised and unsupervised models across four diverse datasets.
-HitchLearning will become the third eye of researchers, helping to observe objects in a large field of view, and assisting the discovery of strong gravitational lenses by the <a href="https://www.lsst.org/science/transient-optical-sky">LSST project</a>.
 
 ## Architecture
 <div align="center">
